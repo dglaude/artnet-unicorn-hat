@@ -42,7 +42,8 @@ class ArtNet(DatagramProtocol):
                     idx += 1
                     b = rawbytes[idx]
                     idx += 1
-                    unicorn.set_pixel(x, y, r, g, b)
+# Something fishy, why (15-y) rather than y... mirror effect?
+                    unicorn.set_pixel(x, 15-y, r, g, b)
                     x += 1
                     if (x > 15):
                         x = 0
